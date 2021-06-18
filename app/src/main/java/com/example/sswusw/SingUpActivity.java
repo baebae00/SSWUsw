@@ -76,16 +76,6 @@ public class SingUpActivity extends AppCompatActivity {
             String StudentNumber = studentNumberEditText.getText().toString();
             String ContestCount = contestCountEditText.getText().toString();
 
-            if (userEmail.equals("") || userNickname.equals("") || userId.equals("") || userPassword.equals("") || userPasswordCheck.equals("") || StudentNumber.equals("") ||
-            ContestCount.equals("")) {
-                AlterDialog.Builder builder = new AlterDialog.Builder(RegisterActivity.this);
-                dialog = builder.setMessage("빈 칸 없이 입력해주세요.")
-                        .setNegativeButton("확인", null)
-                        .create();
-                dialog.show();
-                return;
-            }
-
             switch (v.getId())
             {
                 case R.id.signUpButton:
