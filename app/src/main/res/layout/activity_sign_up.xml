@@ -10,7 +10,7 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="198dp"
+        android:layout_height="175dp"
         android:layout_weight="1"
         android:gravity="center"
         android:shadowColor="#000000"
@@ -20,19 +20,33 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="536dp"
+        android:layout_height="590dp"
         android:layout_weight="1"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/emailEditText"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:ems="10"
-            android:hint="이메일"
-            android:inputType="textEmailAddress"
-            android:paddingBottom="10dp" />
+            android:layout_height="43dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/emailEditText"
+                android:layout_width="249dp"
+                android:layout_height="43dp"
+                android:layout_margin="5dp"
+                android:ems="10"
+                android:hint="학번@sungshin.ac.kr"
+                android:inputType="textEmailAddress"
+                android:paddingBottom="10dp" />
+
+            <Button
+                android:id="@+id/emailButton"
+                android:layout_width="137dp"
+                android:layout_height="43dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:text="인증메일 전송" />
+        </LinearLayout>
 
         <EditText
             android:id="@+id/nicknameEditText"
@@ -119,7 +133,17 @@
             android:ems="10"
             android:gravity="start|top"
             android:hint="학번"
-            android:inputType="textMultiLine"
+            android:inputType="number"
+            android:paddingBottom="10dp" />
+
+        <EditText
+            android:id="@+id/contestCountEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:ems="10"
+            android:hint="공모전 참여횟수"
+            android:inputType="number"
             android:paddingBottom="10dp" />
 
         <Button

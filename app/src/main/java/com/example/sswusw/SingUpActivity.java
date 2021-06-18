@@ -19,7 +19,7 @@ public class SingUpActivity extends AppCompatActivity {
     private ArrayAdapter majoradapter;
     private Spinner majorspinner;
 
-    EditText passwordEditText, passwordCheckEditText, correctEditText;
+    EditText emailEditText, nicknameEditText, idEditText, passwordEditText, passwordCheckEditText, correctEditText, studentNumberEditText, contestCountEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +67,27 @@ public class SingUpActivity extends AppCompatActivity {
     View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            switch (v.getId()) {
+
+            String userEmail = emailEditText.getText().toString();
+            String userNickname = nicknameEditText.getText().toString();
+            String userId = idEditText.getText().toString();
+            String userPassword = passwordEditText.getText().toString();
+            String userPasswordCheck = passwordCheckEditText.getText().toString();
+            String StudentNumber = studentNumberEditText.getText().toString();
+            String ContestCount = contestCountEditText.getText().toString();
+
+            if (userEmail.equals("") || userNickname.equals("") || userId.equals("") || userPassword.equals("") || userPasswordCheck.equals("") || StudentNumber.equals("") ||
+            ContestCount.equals("")) {
+                AlterDialog.Builder builder = new AlterDialog.Builder(RegisterActivity.this);
+                dialog = builder.setMessage("빈 칸 없이 입력해주세요.")
+                        .setNegativeButton("확인", null)
+                        .create();
+                dialog.show();
+                return;
+            }
+
+            switch (v.getId())
+            {
                 case R.id.signUpButton:
                     Log.e("클릭", "클릭");
                     break;
